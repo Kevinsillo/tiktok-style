@@ -542,7 +542,7 @@ initApplication = async function () {
 					}
 				}
 				if (messageText.includes('!tts')) {
-					var check = cooldown(30, 'random')
+					var check = cooldown(30, 'tts', messageNick)
 					if (check) {
 						messageText = messageText.replace('!tts ', '')
 						console.log('prueba: ' + messageText)
@@ -550,7 +550,7 @@ initApplication = async function () {
 					}
 				}
 				if (messageText === '!sonidorand') {
-					var check = cooldown(25, 'random')
+					var check = cooldown(25, 'sonidorand')
 					if (check) {
 						var audio = new Audio();
 						audio.src = sonidosRandom[Math.floor(Math.random() * sonidosRandom.length)]
