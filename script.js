@@ -6,6 +6,7 @@ https://api.countapi.xyz/info/kevinsillo/1596
 
 // ENLACE DE JSDELIVR QUE APUNTA A GITHUB
 https://cdn.jsdelivr.net/gh/Kevinsillo/tiktok-style/mod.js
+https://cdn.jsdelivr.net/gh/Kevinsillo/tiktok-style/script.js
 https://cdn.jsdelivr.net/gh/[USER]/[REPOSITORIO]/[FICHERO]
 */
 
@@ -25,10 +26,10 @@ initApplication = async function () {
 	// DECLARACION DE VARIABLES GLOBALES
 	// --------------------------------------------------------------------------------------
 	var sonidos = {
-		join: false,
+		join: true,
 		like: true,
-		follow: false,
-		share: false,
+		follow: true,
+		share: true,
 		gift: true,
 		command: true
 	}
