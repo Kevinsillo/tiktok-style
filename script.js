@@ -9,7 +9,7 @@ https://cdn.jsdelivr.net/gh/Kevinsillo/tiktok-style/mod.js
 https://cdn.jsdelivr.net/gh/Kevinsillo/tiktok-style/script.js
 https://cdn.jsdelivr.net/gh/[USER]/[REPOSITORIO]/[FICHERO]
 
-$.getScript('https://cdn.jsdelivr.net/gh/Kevinsillo/tiktok-style/script.js')
+$.getScript('https://cdn.jsdelivr.net/gh/Kevinsillo/tiktok-style@latest/script.js')
 */
 
 var initApplication = undefined
@@ -28,10 +28,10 @@ initApplication = async function () {
 	// DECLARACION DE VARIABLES GLOBALES
 	// --------------------------------------------------------------------------------------
 	var sonidos = {
-		join: false,
-		like: false,
-		follow: false,
-		share: false,
+		join: true,
+		like: true,
+		follow: true,
+		share: true,
 		gift: true,
 		command: true
 	}
