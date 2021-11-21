@@ -29,7 +29,7 @@ initApplication = async function () {
 	// --------------------------------------------------------------------------------------
 	var sonidos = {
 		join: false,
-		like: true,
+		like: false,
 		follow: false,
 		share: false,
 		gift: true,
@@ -544,7 +544,7 @@ initApplication = async function () {
 					}
 				}
 				if (messageText.includes('!tts')) {
-					var check = cooldown(30, 'random')
+					var check = cooldown(30, 'tts', messageNick)
 					if (check) {
 						messageText = messageText.replace('!tts ', '')
 						console.log('prueba: ' + messageText)
