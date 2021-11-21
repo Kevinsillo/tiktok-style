@@ -8,6 +8,8 @@ https://api.countapi.xyz/info/kevinsillo/1596
 https://cdn.jsdelivr.net/gh/Kevinsillo/tiktok-style/mod.js
 https://cdn.jsdelivr.net/gh/Kevinsillo/tiktok-style/script.js
 https://cdn.jsdelivr.net/gh/[USER]/[REPOSITORIO]/[FICHERO]
+
+$.getScript('https://cdn.jsdelivr.net/gh/Kevinsillo/tiktok-style/script.js')
 */
 
 var initApplication = undefined
@@ -26,10 +28,10 @@ initApplication = async function () {
 	// DECLARACION DE VARIABLES GLOBALES
 	// --------------------------------------------------------------------------------------
 	var sonidos = {
-		join: true,
+		join: false,
 		like: true,
-		follow: true,
-		share: true,
+		follow: false,
+		share: false,
 		gift: true,
 		command: true
 	}
@@ -542,7 +544,7 @@ initApplication = async function () {
 					}
 				}
 				if (messageText.includes('!tts')) {
-					var check = cooldown(30, 'tts', messageNick)
+					var check = cooldown(30, 'random')
 					if (check) {
 						messageText = messageText.replace('!tts ', '')
 						console.log('prueba: ' + messageText)
@@ -550,7 +552,7 @@ initApplication = async function () {
 					}
 				}
 				if (messageText === '!sonidorand') {
-					var check = cooldown(25, 'sonidorand')
+					var check = cooldown(25, 'random')
 					if (check) {
 						var audio = new Audio();
 						audio.src = sonidosRandom[Math.floor(Math.random() * sonidosRandom.length)]
@@ -737,8 +739,8 @@ initApplication = async function () {
 			*/
 			// PUNTOS QUE RESTAN AL CONTADOR
 			//--------------------------------------------------------------------------------------------------------------------
-			case "https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/c87cfa4c1073085814424d6bf9bec1f0~tplv-obj.png":
-				return {name: 'galleta',	price: -1,	url: image}
+			case "https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/802a21ae29f9fae5abe3693de9f874bd~tplv-obj.png":
+				return {name: 'tiktok',	price: -1,	url: image}
 				break;
 			case "https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/8d4381b7d2272ffc14227c3705832e24~tplv-obj.png":
 				return {name: 'microfono',	price: -5,	url: image}
@@ -751,8 +753,8 @@ initApplication = async function () {
 			// PUNTOS DESACTIVADOS
 			//--------------------------------------------------------------------------------------------------------------------
 			/*
-			case "https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/802a21ae29f9fae5abe3693de9f874bd~tplv-obj.png":
-				return {name: 'tiktok',	price: 1,	url: image}
+			case "https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/c87cfa4c1073085814424d6bf9bec1f0~tplv-obj.png":
+				return {name: 'galleta',	price: -1,	url: image}
 				break;
 			case "https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/eba3a9bb85c33e017f3648eaf88d7189~tplv-obj.png":
 				return {name: 'rosa',	price: 1,	url: image}
