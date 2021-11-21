@@ -354,7 +354,7 @@ initApplication = async function () {
 	    		<div class="row text-center">
 	    			<div class="col">
 	    				<div class="col-tip">
-		    				<img width="32px" src="https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/c87cfa4c1073085814424d6bf9bec1f0~tplv-obj.png">
+		    				<img width="32px" src="https://p16-webcast.tiktokcdn.com/img/maliva/webcast-va/802a21ae29f9fae5abe3693de9f874bd~tplv-obj.png">
 		    				<span class="negativo">-1</span>
 	    				</div>
 	    			</div>
