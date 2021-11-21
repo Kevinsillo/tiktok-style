@@ -36,6 +36,7 @@ initApplication = async function () {
 		command: true
 	}
 	var contador = await $.ajax('https://api.countapi.xyz/info/kevinsillo/1596').then((r)=> {return r.value})
+	var countdown = '2021/11/21 14:00:00'
 	var sumatorio = 0
 	var total = 0
 	var valorMoneda = 0.019
@@ -382,7 +383,7 @@ initApplication = async function () {
 		`
 		$('.chat').after(div);
 		
-		$("#countdown").countdown("2021/10/11 22:00:00", function(event) {
+		$("#countdown").countdown(countdown, function(event) {
 			$(this).html(
 				event.strftime('%H:%M:%S')
 			);
@@ -504,7 +505,7 @@ initApplication = async function () {
 					total = contador + sumatorio
 					animateValue(contador, total, 1000)
 					await $.ajax(`https://api.countapi.xyz/set/kevinsillo/1596?value=${total}`)
-					$('.notificaciones').prepend(`<div class="burbuja"><span>${giftNick}</span> sent ${giftNumber} <img src="${object.url}" width="28px"></div>`)
+					$('.notificaciones').prepend(`<div class="burbuja"><span>${giftNick}</span> envió ${giftNumber} <img src="${object.url}" width="28px"></div>`)
 					var audio = new Audio();
 					if (sumatorio == 0) {
 						audio.src = ''
