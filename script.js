@@ -693,7 +693,6 @@ initApplication = async function () {
 		}
 
 		var msToken = getCookie('msToken')
-		var room_id = __RoomMessage._cacheENVConfig.auth.room_id
 		var message = encodeURIComponent(message)
 
 		fetch(`https://webcast.tiktok.com/webcast/room/chat/?channel=web&aid=1988&app_language=es&webcast_language=es&app_name=tiktok_web&device_platform=web&cookie_enabled=true&screen_width=1920&screen_height=1080&browser_language=es&browser_platform=Win32&browser_name=Mozilla&browser_version=5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F94.0.4606.71%20Safari%2F537.36%20Edg%2F94.0.992.38&browser_online=true&tz_name=Atlantic%2FCanary&content=${message}&msToken=${msToken}&X-Bogus=DFSzswVLxQHVgTHgSm7pxGXyYJWp&_signature=_02B4Z6wo00001r8Wj.gAAIDDnLehV9tCFQK.FotAAM6m27`, {
