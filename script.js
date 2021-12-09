@@ -318,8 +318,8 @@ initApplication = async function () {
 	$('#share').bind('click', function() {silenciar('share')})
 	$('#gift').bind('click', function() {silenciar('gift')})
 
-	var confirmar = confirm("¿Cargar contador?");
-	if (confirmar) {
+	var confirmarContador = confirm("¿Cargar contador?");
+	if (confirmarContador) {
 		$('.container').remove()
 		var div = document.createElement('div');
 		div.setAttribute('class', 'container');
@@ -429,7 +429,7 @@ initApplication = async function () {
 		// SONIDO LOS USUARIOS QUE SE UNEN
 		// --------------------------------------------------------------------------------------
 		if (sonidos['join']) {
-			nodes = document.querySelectorAll(".tiktok-pmis2w-SpanEnterMessageContent .tiktok-1751snb-SpanNickName")[0].outerText
+			nodes = document.querySelectorAll(".tiktok-pmis2w-SpanEnterMessageContent .tiktok-1751snb-SpanNickName")[1].outerText
 			if (joinChat === nodes) {}
 			else {
 				joinChat = nodes
@@ -507,8 +507,10 @@ initApplication = async function () {
 					sumatorio = giftNumber * object.price
 					total = contador + sumatorio
 					animateValue(contador, total, 1000)
-					await $.ajax(`https://api.countapi.xyz/set/kevinsillo/1596?value=${total}`)
-					$('.notificaciones').prepend(`<div class="burbuja"><span>${giftNick}</span> envió ${giftNumber} <img src="${object.url}" width="28px"></div>`)
+					if (confirmarContador) {
+						await $.ajax(`https://api.countapi.xyz/set/kevinsillo/1596?value=${total}`)
+						$('.notificaciones').prepend(`<div class="burbuja"><span>${giftNick}</span> envió ${giftNumber} <img src="${object.url}" width="28px"></div>`)
+					}
 					var audio = new Audio();
 					if (sumatorio == 0) {
 						audio.src = ''
