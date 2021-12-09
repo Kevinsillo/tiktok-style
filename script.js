@@ -695,7 +695,7 @@ initApplication = async function () {
 		var msToken = getCookie('msToken')
 		var message = encodeURIComponent(message)
 
-		fetch(`https://webcast.tiktok.com/webcast/room/chat/?aid=1988&app_language=es&app_name=tiktok_web&battery_info=1&browser_language=es&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F96.0.4664.55%20Safari%2F537.36%20Edg%2F96.0.1054.43&channel=tiktok_web&content=${message}&cookie_enabled=true&device_id=6992530146813756933&device_platform=web_pc&focus_state=true&from_page=user&history_len=9&is_fullscreen=false&is_page_visible=true&os=windows&priority_region=ES&referer=https%3A%2F%2Fwww.tiktok.com%2F&region=ES&room_id=7039691491207432962&root_referer=https%3A%2F%2Fwww.tiktok.com%2F&screen_height=1080&screen_width=1920&tz_name=Atlantic%2FCanary&verifyFp=verify_kwyzpfpw_Une2r9dj_OwVO_4VYw_9kWa_PW0AKmWFByrT&webcast_language=es&msToken=${msToken}&X-Bogus=DFSzswVLbAXANtO-SE-kdsXyYJU5&_signature=_02B4Z6wo00001DqB47gAAIDBGSDNF7o3k3Q6gecAAG8Zea`, {
+		fetch(`https://webcast.tiktok.com/webcast/room/chat/?aid=1988&app_language=es&app_name=tiktok_web&channel=tiktok_web&content=${message}&cookie_enabled=true&device_id=6992530146813756933&device_platform=web_pc&focus_state=true&from_page=user&is_page_visible=true&region=ES&room_id=7039689806841908015&msToken=${msToken}`, {
 		  "headers": {
 		    "accept": "*/*",
 		    "accept-language": "es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
