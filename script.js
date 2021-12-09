@@ -429,7 +429,7 @@ initApplication = async function () {
 		// SONIDO LOS USUARIOS QUE SE UNEN
 		// --------------------------------------------------------------------------------------
 		if (sonidos['join']) {
-			nodes = document.querySelectorAll(".tiktok-pmis2w-SpanEnterMessageContent .tiktok-1751snb-SpanNickName")[1].outerText
+			nodes = document.querySelectorAll(".tiktok-2xa0hl-SpanEnterMessageContent .tiktok-1751snb-SpanNickName")[0].outerText
 			if (joinChat === nodes) {}
 			else {
 				joinChat = nodes
