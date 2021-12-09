@@ -692,29 +692,29 @@ initApplication = async function () {
 			return decodeURIComponent(!!cookiestring ? cookiestring.toString().replace(/^[^=]+./,"") : "");
 		}
 
+		var message = "Buenos dias"
 		var msToken = getCookie('msToken')
 		var message = encodeURIComponent(message)
 
-		fetch(`https://webcast.tiktok.com/webcast/room/chat/?channel=web&aid=1988&app_language=es&webcast_language=es&app_name=tiktok_web&device_platform=web&cookie_enabled=true&screen_width=1920&screen_height=1080&browser_language=es&browser_platform=Win32&browser_name=Mozilla&browser_version=5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F94.0.4606.71%20Safari%2F537.36%20Edg%2F94.0.992.38&browser_online=true&tz_name=Atlantic%2FCanary&content=${message}&msToken=${msToken}&X-Bogus=DFSzswVLxQHVgTHgSm7pxGXyYJWp&_signature=_02B4Z6wo00001r8Wj.gAAIDDnLehV9tCFQK.FotAAM6m27`, {
-		"headers": {
-			"accept": "application/json, text/plain, *",
-			"accept-language": "es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
-			"content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-			"response-format": "json",
-			"sec-ch-ua": "\"Chromium\";v=\"94\", \"Microsoft Edge\";v=\"94\", \";Not A Brand\";v=\"99\"",
-			"sec-ch-ua-mobile": "?0",
-			"sec-ch-ua-platform": "\"Windows\"",
-			"sec-fetch-dest": "empty",
-			"sec-fetch-mode": "cors",
-			"sec-fetch-site": "same-site",
-			"x-secsdk-csrf-token": "0001000000015fdcc0c53751b5488432ff3c02aad4f72c05f91b7a2889559bd874baf7a0d70e16ab203ad441fe91"
-		},
-		"referrer": "https://www.tiktok.com/",
-		"referrerPolicy": "strict-origin-when-cross-origin",
-		"body": "",
-		"method": "POST",
-		"mode": "cors",
-		"credentials": "include"
+		fetch(`https://webcast.tiktok.com/webcast/room/chat/?aid=1988&app_language=es&app_name=tiktok_web&battery_info=1&browser_language=es&browser_name=Mozilla&browser_online=true&browser_platform=Win32&browser_version=5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F96.0.4664.55%20Safari%2F537.36%20Edg%2F96.0.1054.43&channel=tiktok_web&content=${message}&cookie_enabled=true&device_id=6992530146813756933&device_platform=web_pc&focus_state=true&from_page=user&history_len=9&is_fullscreen=false&is_page_visible=true&os=windows&priority_region=ES&referer=https%3A%2F%2Fwww.tiktok.com%2F&region=ES&room_id=7039691491207432962&root_referer=https%3A%2F%2Fwww.tiktok.com%2F&screen_height=1080&screen_width=1920&tz_name=Atlantic%2FCanary&verifyFp=verify_kwyzpfpw_Une2r9dj_OwVO_4VYw_9kWa_PW0AKmWFByrT&webcast_language=es&msToken=${msToken}&X-Bogus=DFSzswVLbAXANtO-SE-kdsXyYJU5&_signature=_02B4Z6wo00001DqB47gAAIDBGSDNF7o3k3Q6gecAAG8Zea`, {
+		  "headers": {
+		    "accept": "*/*",
+		    "accept-language": "es,es-ES;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+		    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+		    "sec-ch-ua": "\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"96\", \"Microsoft Edge\";v=\"96\"",
+		    "sec-ch-ua-mobile": "?0",
+		    "sec-ch-ua-platform": "\"Windows\"",
+		    "sec-fetch-dest": "empty",
+		    "sec-fetch-mode": "cors",
+		    "sec-fetch-site": "same-site",
+		    "x-secsdk-csrf-token": "000100000001017359eec2a372093c535b46794e0c91753823cb042cd5944dbcef156e21cf6216bf1947d55c71ad"
+		  },
+		  "referrer": "https://www.tiktok.com/",
+		  "referrerPolicy": "strict-origin-when-cross-origin",
+		  "body": "",
+		  "method": "POST",
+		  "mode": "cors",
+		  "credentials": "include"
 		})
 		.then((response) => {
 			console.log(response)
