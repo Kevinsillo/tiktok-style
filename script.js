@@ -692,7 +692,6 @@ initApplication = async function () {
 			return decodeURIComponent(!!cookiestring ? cookiestring.toString().replace(/^[^=]+./,"") : "");
 		}
 
-		var message = "Buenos dias"
 		var msToken = getCookie('msToken')
 		var message = encodeURIComponent(message)
 
