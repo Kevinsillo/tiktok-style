@@ -429,9 +429,10 @@ initApplication = async function () {
 		// SONIDO LOS USUARIOS QUE SE UNEN
 		// --------------------------------------------------------------------------------------
 		if (sonidos['join']) {
-			if (joinChat === $('.webcast-chatroom__member-message-container')[0].outerText) {}
+			nodes = document.querySelectorAll(".tiktok-pmis2w-SpanEnterMessageContent .tiktok-1751snb-SpanNickName")[0].outerText
+			if (joinChat === nodes) {}
 			else {
-				joinChat = $('.webcast-chatroom__member-message-container')[0].outerText
+				joinChat = nodes
 				console.log('Joins: ' + joinChat)
 				var audio = new Audio();
 				audio.src = joinChatSound
@@ -442,10 +443,11 @@ initApplication = async function () {
 		// SONIDO PARA LOS LIKES
 		// --------------------------------------------------------------------------------------
 		if (sonidos['like']) {
-			if (likes === $('.webcast-chatroom__like-message').length) {}
+			nodes = document.querySelectorAll(".tiktok-urmn0y-DivLikeMessageContent .tiktok-1751snb-SpanNickName")
+			if (likes === nodes.length) {}
 			else {
-				likes = $('.webcast-chatroom__like-message').length
-				likeNick = $('.webcast-chatroom__like-message')[likes-1].outerText
+				likes = nodes.length
+				likeNick = nodes[likes-1].outerText
 				console.log('Like: ' + likeNick)
 				var audio = new Audio();
 				audio.src = likeSound
@@ -457,12 +459,12 @@ initApplication = async function () {
 		// SONIDOS PARA LOS FOLLOWS
 		// --------------------------------------------------------------------------------------
 		if (sonidos['follow']) {
-			if ($('.webcast-chatroom__social-message:contains("seguir")').length > 0) {
-				if (followers === $('.webcast-chatroom__social-message:contains("seguir")').length) {}
+			nodes = [...document.querySelectorAll('.tiktok-1yqmv63-DivChatRoomMessage-StyledSocialMessageItem .tiktok-zsq8pw-SpanChatRoomComment')].filter(element => element.childNodes?.[0]?.nodeValue?.match('seguir'));
+			if (nodes.length > 0) {
+				if (followers === nodes.length) {}
 				else {
-					followers = $('.webcast-chatroom__social-message:contains("seguir")').length
-					followerMessage = $('.webcast-chatroom__social-message:contains("seguir")')[followers-1].outerText
-					console.log('Seguidor: ' + followerMessage)
+					followers = nodes.length
+					followerMessage = nodes[followers-1].outerText
 					var audio = new Audio();
 					audio.src = followerSound
 					audio.play();
@@ -473,12 +475,12 @@ initApplication = async function () {
 		// SONIDOS PARA LOS SHARES
 		// --------------------------------------------------------------------------------------
 		if (sonidos['share']) {
-			if ($('.webcast-chatroom__social-message:contains("compart")').length > 0) {
-				if (sharers === $('.webcast-chatroom__social-message:contains("compart")').length) {}
+			nodes = [...document.querySelectorAll('.tiktok-1yqmv63-DivChatRoomMessage-StyledSocialMessageItem .tiktok-zsq8pw-SpanChatRoomComment')].filter(element => element.childNodes?.[0]?.nodeValue?.match('compart'));
+			if (nodes.length > 0) {
+				if (sharers === nodes.length) {}
 				else {
-					sharers = $('.webcast-chatroom__social-message:contains("compart")').length
-					sharerMessage = $('.webcast-chatroom__social-message:contains("compart")')[sharers-1].outerText
-					console.log('Share: ' + sharerMessage)
+					sharers = nodes.length
+					sharerMessage = nodes[sharers-1].outerText
 					var audio = new Audio();
 					audio.src = sharerSound
 					audio.play();
@@ -489,11 +491,12 @@ initApplication = async function () {
 		// SONIDO PARA LOS REGALOS
 		// --------------------------------------------------------------------------------------
 		if (sonidos['gift']) {
-			if (gifts === $('.webcast-chatroom__gift-message').length) {}
+			nodes = document.querySelectorAll('.tiktok-a24hmf-DivChatRoomMessage')
+			if (gifts === nodes.length) {}
 			else {
-				gifts = $('.webcast-chatroom__gift-message').length
-				giftMessage = $('.webcast-chatroom__gift-message')[gifts-1].outerText
-				giftImage = $('.webcast-chatroom__gift-message .chat-message-item .content img')[gifts-1].src
+				gifts = nodes.length
+				giftMessage = nodes[gifts-1].outerText
+				giftImage = document.querySelectorAll('.tiktok-a24hmf-DivChatRoomMessage img')[gifts-1].src
 				giftMessage = giftMessage.split("\n")
 				giftNick = giftMessage[0]
 				giftNumber = giftMessage[2].replace('×','')
@@ -533,11 +536,12 @@ initApplication = async function () {
 		// SONIDO PARA LOS COMANDOS
 		// --------------------------------------------------------------------------------------
 		if (sonidos['command']) {
-			if (messages === $('.webcast-chatroom__chat-message').length) {}
+			nodes = document.querySelectorAll(".tiktok-l1akoy-DivChatMessageContent")
+			if (messages === nodes.length) {}
 			else {
-				messages = $('.webcast-chatroom__chat-message').length
-				messageNick = $('.webcast-chatroom__chat-message .chat-message-item .webcast-chatroom__profile_wrapper .nickname')[messages-1].outerText
-				messageText = $('.webcast-chatroom__chat-message .chat-message-item .content')[messages-1].outerText
+				messages = nodes.length
+				messageNick = document.querySelectorAll(".tiktok-l1akoy-DivChatMessageContent .tiktok-1751snb-SpanNickName")[messages-1].outerText
+				messageText = document.querySelectorAll(".tiktok-l1akoy-DivChatMessageContent .tiktok-zsq8pw-SpanChatRoomComment")[messages-1].outerText
 				if (messageText === '!test') {
 					var check = cooldown(7200, 'test', messageNick)
 					if (check) {
@@ -607,6 +611,11 @@ initApplication = async function () {
 
 	// FUNCIONES
 	// --------------------------------------------------------------------------------------
+
+	// FUNCION PARA DEVOLVER EL ULTIMO VALOR
+	function last(valor) {
+		return [].slice.call(valor).pop();
+	}
 
 	// FUNCION PARA ANIMAR EL CONTADOR
 	function animateValue(start, end, duracion) {
